@@ -1,5 +1,8 @@
 #!/bin/bash -x
 
+curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -
+patch -p1 < kernelsu.patch
+
 export ARCH=arm64
 
 BUILD_CROSS_COMPILE=../toolchains/aarch64-linux-android-4.9/bin/aarch64-linux-android-
